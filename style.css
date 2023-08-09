@@ -17,7 +17,7 @@
 }
 
 :root {
-  /* --header-height: 65px; */
+  --header-height: 65px;
   --header-color: #0c0c0c;
   --container-width: 1820px;
   --gutter: 17px;
@@ -74,7 +74,7 @@ p {
 }
 @media (min-width: 1920px) {
   [type="submit"], .button, button:not([class]) {
-    font-size: 23px;
+    
   }
 }
 button:not([class]):not([disabled]):hover, .button:hover, input[type="submit"]:hover, input[type="reset"]:hover, [type="submit"]:hover, .button:hover, button:not([class]):not([disabled]):hover  {
@@ -430,20 +430,28 @@ ul.social-nav a.linkedin:hover {
 
 .splash {
   overflow: clip;
-  /* background: rgba(255,0,0,.2); */
+  min-height: 100vh;
   min-height: calc(100vh - var(--header-height));
+  background-image: url(images/bg-left.png), url(images/bg-right.png);
+  background-size: contain, contain;
+  background-position: left top, right top;
+  background-repeat: no-repeat;
+
 }
 
 .splash > .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (min-width: 1024px) {
   .splash > .container {
+    width: 75%;
+    max-width: 1200px;
+
+    display: flex;
     flex-direction: row;
+    
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -458,21 +466,50 @@ ul.social-nav a.linkedin:hover {
   background-repeat: no-repeat;
   background-position: center;
 
+  height: calc(33vh - calc(var(--header-height)/3));
+
+  text-decoration: none;
+
+  position: relative;
+
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .splash > .container > a {
-    margin-left: -16.5%;
-    margin-right: -16.5%;
-    clip-path: polygon(34% 0, 0 100%, 67% 100%, 100% 0);
+    height: auto;
+  }
+}
+@media (min-width: 1024px) and (hover: hover) {
+  .splash > .container > a {
+    margin-left: -18.5%;
+    margin-right: -18.5%;
+    clip-path: polygon(40% 0, 0 100%, 60% 100%, 100% 0%);
     min-height: calc(100vh - var(--header-height));
   }
 }
 
-.splash > .container > a:hover {
-  clip-path: polygon(0% 0, 0 100%, 100% 100%, 100% 0);
-  margin-left: -8.25%;
-  margin-right: -8.25%;
+@media (min-width: 1024px) and (hover: hover) {
+  .splash > .container > a:hover {
+    clip-path: polygon(0% 0, 0 100%, 100% 100%, 100% 0);
+    margin-left: -8.25%;
+    margin-right: -8.25%;
+  }
 }
+.splash > .container > a::after {
+  transition: 2s background;
+  content: " ";
+  background: rgba(0,0,0,0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.splash > .container > a:hover::after {
+  background: rgba(0,0,0,.8);
+  /* background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 30%,rgba(0,0,0,1) 100%); */
+}
+
 
 
 
@@ -510,8 +547,14 @@ ul.social-nav a.linkedin:hover {
   user-select: none;
   pointer-events: none;
 }
-
 @media (min-width: 1067px) {
+  .splash .cover .dot {
+    width: 200px;
+    height: 200px;
+    padding: 30px;
+  }
+}
+@media (min-width: 1920px) {
   .splash .cover .dot {
     width: 240px;
     height: 240px;
@@ -531,9 +574,23 @@ ul.social-nav a.linkedin:hover {
 }
 
 .splash .cover .content {
+  transition: 2.5s opacity, 1.5s transform;
   opacity: 0;
-  height: 0;
-  
+  transform: translateY(75px);
+  text-align: center;
+}
+
+@media (min-width: 1024px) and (hover: hover) {
+  .splash > .container > a:hover .content {
+    opacity: 1 !important;
+    transform: translateY(0);
+  }
+}
+
+.splash .cover .content p {
+  text-decoration: none;
+  max-width: 34ch;
+  margin: 2.5rem auto 1.5rem;
 }
 
 
