@@ -60,6 +60,7 @@ p {
 
 
 [type="submit"], .button, button:not([class]) {
+  display: inline-block;
   text-decoration: none;
   transition: 0.3s border-color, 0.3s color, 0.3s background;
   border: 1px solid #fff;
@@ -527,7 +528,8 @@ ul.social-nav a.linkedin:hover {
 }
 
 .splash .cover .dot {
-  transition: 1.74s transform, 1.25s box-shadow, .2s ease filter;
+  position: relative;
+  transition: 1.74s transform, 1.25s box-shadow, 1.25s background, 1.25s width, 1.25s height, .2s ease filter;
   background: black;
   width: 155px;
   height: 155px;
@@ -557,17 +559,47 @@ ul.social-nav a.linkedin:hover {
     height: 240px;
     padding: 30px;
   }
-}
-
-
+} 
 
 .splash > .container > a:hover .cover .dot {
-  transform: scale(1.13);
-  box-shadow: 0px 0 20px rgba(0,0,0,.15);
-  
+  /* transform: scale(1.13);
+  box-shadow: 0px 0 20px rgba(0,0,0,.15); */
+  background: transparent;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  width: 360px;
+  height: 360px;
 }
 .splash > .container > a:active .cover .dot {
   filter: blur(6px);
+}
+
+
+
+.splash .cover .dot .dot-mark {
+  transition: opacity .2s;
+}
+
+.splash > .container > a:hover .cover .dot-mark {
+  opacity: 0;
+}
+
+.splash .cover .dot-title {
+  position: absolute;
+  max-width: 80%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  transition: all .2s;
+  transition-delay: 0;
+  transition-duration: 0.2s;
+  opacity: 0;
+}
+
+.splash > .container > a:hover .cover .dot-title {
+  opacity: 1 !important;
+
+  transition: all .5s;
+  transition-delay: .5s;
 }
 
 .splash .cover .content {
@@ -585,7 +617,7 @@ ul.social-nav a.linkedin:hover {
 @media (min-width: 1024px) {
   .splash > .container > a:hover .content {
     opacity: 1 !important;
-    transform: translateY(0);
+    transform: translateY(-80%);
   }
 }
 
