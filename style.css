@@ -526,13 +526,6 @@ ul.social-nav a.linkedin:hover {
   z-index: 3;
 }
 
-@media (min-width: 1024px) {
-  .splash > .container > a:hover:nth-child(1),
-  .splash > .container > a:hover:nth-child(2),
-  .splash > .container > a:hover:nth-child(3) {
-    z-index: 5;
-  }
-}
 
 .splash .cover .dot {
   transition: 1.74s transform, 1.25s box-shadow, .2s ease filter;
