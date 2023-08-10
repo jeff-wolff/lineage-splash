@@ -456,7 +456,7 @@ ul.social-nav a.linkedin:hover {
 }
 
 .splash > .container > a  {
-  transition: 1s clip-path, 1s margin;
+  transition: 2s clip-path, 2s margin;
 
   display: flex;
   justify-content: center;
@@ -524,6 +524,14 @@ ul.social-nav a.linkedin:hover {
   background-image: url(images/bg-le.jpg);
   /* background-image: url(images/bg-las.jpg); */
   z-index: 3;
+}
+
+@media (min-width: 1024px) {
+  .splash > .container > a:hover:nth-child(1),
+  .splash > .container > a:hover:nth-child(2),
+  .splash > .container > a:hover:nth-child(3) {
+    z-index: 5;
+  }
 }
 
 .splash .cover .dot {
