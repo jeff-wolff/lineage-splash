@@ -634,7 +634,7 @@ ul.social-nav a.linkedin:hover {
   
   left: 0;
   bottom: 0;
-  transform: translateX(-100%) translateY(100%);
+  transform: translateX(-125%) translateY(125%);
   text-align: center;
 }
 @media (min-width: 768px) {
