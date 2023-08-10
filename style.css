@@ -433,10 +433,10 @@ ul.social-nav a.linkedin:hover {
   overflow: clip;
   min-height: 100vh;
   min-height: calc(100vh - var(--header-height));
-  background-image: url(images/bg-left.png), url(images/bg-right.png);
+  /* background-image: url(images/bg-left.png), url(images/bg-right.png);
   background-size: contain, contain;
   background-position: left top, right top;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
 }
 
@@ -457,7 +457,7 @@ ul.social-nav a.linkedin:hover {
 }
 
 .splash > .container > a  {
-  transition: 2s clip-path, 2s margin;
+  transition: 2s clip-path, 2s margin, 2s flex;
 
   display: flex;
   justify-content: center;
@@ -514,6 +514,12 @@ ul.social-nav a.linkedin:hover {
 .splash > .container > a:nth-child(1) {
   background-image: url(images/bg-las.jpg);
 }
+@media (min-width: 1024px) {
+  .splash > .container > a:hover:nth-child(1) {
+    margin-right: -15%;
+    flex: 1 1 50%;
+  }
+}
 .splash > .container > a:nth-child(2) {
   background-image: url(images/bg-lad.jpg);
   /* background-image: url(images/bg-las.jpg); */
@@ -525,6 +531,20 @@ ul.social-nav a.linkedin:hover {
   background-image: url(images/bg-le.jpg);
   /* background-image: url(images/bg-las.jpg); */
   z-index: 3;
+}
+@media (min-width: 1024px) {
+  .splash > .container > a:hover:nth-child(3) {
+    margin-left: -15%;
+    flex: 1 1 50%;
+  }
+}
+
+
+.splash .cover {
+  position: relative;
+  z-index: 1;
+
+  width: 66%;
 }
 
 .splash .cover .dot {
@@ -605,8 +625,34 @@ ul.social-nav a.linkedin:hover {
 .splash .cover .content {
   transition: 2.5s opacity, 1.5s transform;
   opacity: 0;
-  transform: translateY(75px);
+  position: absolute;
+  
+  
+  
+  left: 0;
+  bottom: 0;
+  transform: translateX(-100%) translateY(100%);
   text-align: center;
+}
+@media (min-width: 768px) {
+  .splash .cover .content {
+    max-width: 27ch;
+  }
+}
+@media (min-width: 1025px) {
+  .splash .cover .content {
+    max-width: 28ch;
+  }
+}
+@media (min-width: 1440px) {
+  .splash .cover .content {
+    max-width: 39ch;
+  }
+}
+@media (min-width: 1920px) {
+  .splash .cover .content {
+    max-width: 41ch;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -617,13 +663,23 @@ ul.social-nav a.linkedin:hover {
 @media (min-width: 1024px) {
   .splash > .container > a:hover .content {
     opacity: 1 !important;
-    transform: translateY(-80%);
+
   }
 }
 
+.splash > .container > a:nth-child(1):hover .content  {
+  transform: translateX(-5%) translateY(30%) !important;
+}
+.splash > .container > a:nth-child(2):hover .content  {
+  transform: translateX(0%) translateY(30%) !important;
+}
+.splash > .container > a:nth-child(3):hover .content  {
+  transform: translateX(5%) translateY(30%) !important;
+}
+
+
 .splash .cover .content p {
   text-decoration: none;
-  max-width: 34ch;
   margin: 2.5rem auto 1.5rem;
 }
 
