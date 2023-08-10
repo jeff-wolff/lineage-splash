@@ -543,8 +543,11 @@ ul.social-nav a.linkedin:hover {
 .splash .cover {
   position: relative;
   z-index: 1;
-
-  width: 66%;
+}
+@media (min-width: 1024px) {
+  .splash .cover {
+    width: 66%;
+  }
 }
 
 .splash .cover .dot {
