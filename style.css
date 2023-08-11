@@ -671,13 +671,13 @@ ul.social-nav a.linkedin:hover {
 }
 
 .splash > .container > a:nth-child(1):hover .content  {
-  transform: translateX(-5%) translateY(30%) !important;
+  transform: translateX(7%) translateY(30%) !important;
 }
 .splash > .container > a:nth-child(2):hover .content  {
   transform: translateX(0%) translateY(30%) !important;
 }
 .splash > .container > a:nth-child(3):hover .content  {
-  transform: translateX(5%) translateY(30%) !important;
+  transform: translateX(7%) translateY(35%) !important;
 }
 
 
